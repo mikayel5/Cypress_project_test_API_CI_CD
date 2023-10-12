@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 
 
 describe("Todo Ui testing", ()=>{
@@ -5,7 +6,7 @@ describe("Todo Ui testing", ()=>{
 
 
     beforeEach(()=>{
-        cy.visit('http://localhost:3000/');
+        cy.visit('http://localhost:3000')
     })
 
     it('schuld add new to do ', () => {
@@ -13,6 +14,11 @@ describe("Todo Ui testing", ()=>{
         cy.get('.success').should('be.visible')
         cy.get(".todo-item").last().should("contain.text","Lracnel text")
     });
+
+    afterEach(()=>{
+            cy.get(".delete-item").click({multiple:true})
+       
+    })
     
 
 })

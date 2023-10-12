@@ -1,21 +1,5 @@
 {
-  "todos": [
-    {
-      "name": "Lracnel text",
-      "id": 4281,
-      "isComplete": false
-    },
-    {
-      "name": "Lracnel text",
-      "id": 4168,
-      "isComplete": false
-    },
-    {
-      "name": "Lracnel text",
-      "id": 1518,
-      "isComplete": false
-    }
-  ],
+  "todos": [],
   "users": [
     {
       "email": "olivier@mail.com",
