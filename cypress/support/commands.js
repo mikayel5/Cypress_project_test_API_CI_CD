@@ -25,16 +25,45 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-    Cypress.Commands.add("AddingNewTodo", (todo)=>{
-        cy.get(".todo-input").type( todo + '{enter}')
+Cypress.Commands.add("AddingNewTodo", (todo) => {
+    cy.get(".todo-input").type(todo + '{enter}')
 
-        if(todo){
-            cy.get('.success').should('be.visible')
+    if (todo) {
+        cy.get('.success').should('be.visible')
 
-        }  
-        else{
-            cy.get('.error').should('be.visible')
+    } else {
+        cy.get('.error').should('be.visible')
 
+    }
+})
+
+
+Cypress.Commands.add('addDummyTodos', () => {
+    const todos = [
+        {
+            "name" : "learn cypress",
+            "isComplete": false
+        },
+        {
+            "name" : "build framework",
+            "isComplete": true
+        },
+        {
+            "name" : "shopping",
+            "isComplete": false
+        },
+        {
+            "name" : "drink coffe",
+            "isComplete": true
         }
+    ]
 
+
+    todos.forEach(todo =>{
+        cy.request({
+            method: "POST",
+            url: "http://localhost:8080/todos",
+            body: todo
+        })
     })
+})
