@@ -27,6 +27,11 @@ describe("Todo Ui testing", ()=>{
 
     });
 
+    it('should not add an empty todo', ()=>{
+        cy.AddingNewTodo("")
+
+    })
+
     afterEach(()=>{
         cy.get('body').then($el =>{
             if($el.find('.delete-item').length > 0){

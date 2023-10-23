@@ -25,7 +25,16 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-Cypress.Commands.add("AddingNewTodo", (todo)=>{
-    cy.get(".todo-input").type( todo + '{enter}')
-    cy.get('.success').should('be.visible')
-})
+    Cypress.Commands.add("AddingNewTodo", (todo)=>{
+        cy.get(".todo-input").type( todo + '{enter}')
+
+        if(todo){
+            cy.get('.success').should('be.visible')
+
+        }  
+        else{
+            cy.get('.error').should('be.visible')
+
+        }
+
+    })
