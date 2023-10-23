@@ -1,16 +1,5 @@
 {
-  "todos": [
-    {
-      "name": "Arajin Lracnel",
-      "id": 2945,
-      "isComplete": false
-    },
-    {
-      "name": "Erkrord Lracnel",
-      "id": 4350,
-      "isComplete": false
-    }
-  ],
+  "todos": [],
   "users": [
     {
       "email": "olivier@mail.com",

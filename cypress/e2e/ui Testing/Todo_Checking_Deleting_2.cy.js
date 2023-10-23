@@ -35,5 +35,5 @@ describe("Todo Ui testing", ()=>{
         })
     })
     
-///// bayc erevi lav@ chi 
+///// bayc erevi lav@ chi-> dzvela support commandsi mej poxeluc heto 
 })
