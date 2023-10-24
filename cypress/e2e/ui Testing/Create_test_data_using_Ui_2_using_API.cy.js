@@ -10,24 +10,7 @@ describe('filter functionality test case', () => {
             method: 'GET',
             url:'http://localhost:8080/todos'
         },{
-            body:[
-                {
-                    "name" : "learn cypress",
-                    "isComplete": false
-                },
-                {
-                    "name" : "build framework",
-                    "isComplete": true
-                },
-                {
-                    "name" : "shopping",
-                    "isComplete": false
-                },
-                {
-                    "name" : "drink coffe",
-                    "isComplete": true
-                }
-            ]
+            fixture:'todos' // todos in fixtures -> todos.json
         })
         
         

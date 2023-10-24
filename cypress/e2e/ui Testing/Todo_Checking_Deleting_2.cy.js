@@ -9,8 +9,13 @@ describe("Todo Ui testing", ()=>{
         cy.visit('http://localhost:3000')
     })
 
-    it('schuld add new to correctly ', () => {
+    it.only('schuld add new to correctly ', () => {
+
+        cy.intercept('POST','http://localhost:8080/todos').as('postRequest')
         cy.AddingNewTodo("Arajin Lracnel")
+        cy.wait('@postRequest').then(xhr =>{
+            expect(xhr.request.body.name).to.eql('Arajin Lracnel')
+        })
         cy.get(".todo-item").last().should("contain.text","Arajin Lracnel")
     });
 
@@ -27,13 +32,13 @@ describe("Todo Ui testing", ()=>{
 
     });
 
-    afterEach(()=>{
-        cy.get('body').then($el =>{
-            if($el.find('.delete-item').length > 0){
-                cy.get(".delete-item", { timeout: 10000 }).should('exist').click({ multiple: true });
-            }
-        })
-    })
+    // afterEach(()=>{
+    //     cy.get('body').then($el =>{
+    //         if($el.find('.delete-item').length > 0){
+    //             cy.get(".delete-item", { timeout: 10000 }).should('exist').click({ multiple: true });
+    //         }
+    //     })
+    // })
     
 ///// bayc erevi lav@ chi-> dzvela support commandsi mej poxeluc heto 
 })
